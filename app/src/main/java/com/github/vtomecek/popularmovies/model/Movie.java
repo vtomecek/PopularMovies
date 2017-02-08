@@ -11,18 +11,18 @@ import org.json.JSONObject;
  */
 
 public class Movie implements Parcelable {
-    String poster_path;
-    boolean adult;
-    String overview;
-    String release_date;
-    int id;
-    String original_title;
-    String title;
-    String backdrop_path;
-    double popularity;
-    int vote_count;
-    boolean video;
-    double vote_average;
+    private String poster_path;
+    private boolean adult;
+    private String overview;
+    private String release_date;
+    private int id;
+    private String original_title;
+    private String title;
+    private String backdrop_path;
+    private double popularity;
+    private int vote_count;
+    private boolean video;
+    private double vote_average;
 
     private Movie(Parcel in) {
         poster_path = in.readString();
@@ -75,7 +75,7 @@ public class Movie implements Parcelable {
         dest.writeDouble(vote_average);
     }
 
-    static final Parcelable.Creator<Movie> CREATOR
+    public static final Parcelable.Creator<Movie> CREATOR
             = new Parcelable.Creator<Movie>() {
 
         @Override
