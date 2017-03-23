@@ -24,6 +24,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+        <provider
+            android:authorities="com.github.vtomecek.popularmovies"
+            android:name=".data.FavouritesContentProvider"
+            android:exported="true" >
+        </provider>
     </application>
 
 </manifest>

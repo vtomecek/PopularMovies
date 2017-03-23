@@ -23,7 +23,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
 
     private int mNumberItems;
 
-    final private List<Movie> movies;
+    private List<Movie> movies;
 
     public interface ListItemClickListener {
         void onListItemClick(int clickedItemIndex);
@@ -33,6 +33,12 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         mNumberItems = movies.size();
         mOnClickListener = listener;
         this.movies = movies;
+    }
+
+    public void addNewMovies(List<Movie> movies) {
+        //this.movies.addAll(movies);
+        this.movies = movies;
+        mNumberItems = this.movies.size();
     }
 
     @Override

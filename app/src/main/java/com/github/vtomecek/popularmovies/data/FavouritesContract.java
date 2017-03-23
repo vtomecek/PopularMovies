@@ -1,5 +1,6 @@
 package com.github.vtomecek.popularmovies.data;
 
+import android.net.Uri;
 import android.provider.BaseColumns;
 
 /**
@@ -7,7 +8,22 @@ import android.provider.BaseColumns;
  */
 
 public class FavouritesContract {
+
+    public static final String AUTHORITY = "com.github.vtomecek.popularmovies";
+
+    // The base content URI = "content://" + <authority>
+    public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + AUTHORITY);
+
+    // Define the possible paths for accessing data in this contract
+    // This is the path for the "tasks" directory
+    public static final String PATH_FAVOURITES = "favourites";
+
+
     public static final class FavouritesEntry implements BaseColumns {
+
+        public static final Uri CONTENT_URI =
+                BASE_CONTENT_URI.buildUpon().appendPath(PATH_FAVOURITES).build();
+
         public static final String TABLE_NAME = "favourites";
 
         public static final String COLUMN_POSTER_PATH = "poster_path";

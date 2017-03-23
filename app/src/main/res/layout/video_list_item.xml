@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_detail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="4dp"
+    android:paddingLeft="4dp"
+    android:paddingRight="4dp"
+    android:paddingTop="4dp"
+    tools:context="com.github.vtomecek.popularmovies.fragments.VideosFragment">
 
-</LinearLayout>
+
+    <ImageView
+        android:id="@+id/video_list_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:adjustViewBounds="true" />
+
+    <TextView
+        android:id="@+id/video_list_item_caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/video_list_item"
+        android:layout_alignLeft="@+id/video_list_item"
+        android:layout_alignStart="@+id/video_list_item"
+        android:layout_marginTop="2dp" />
+</RelativeLayout>

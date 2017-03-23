@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item android:id="@+id/favourite_star"
+        android:title="@string/favourite"
+        android:titleCondensed="@string/favourite"
+        android:icon="@android:drawable/btn_star_big_off"
+        app:showAsAction="always"
+        android:checkable="true" />
 </menu>

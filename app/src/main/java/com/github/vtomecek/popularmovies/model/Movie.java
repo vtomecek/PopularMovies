@@ -1,10 +1,13 @@
 package com.github.vtomecek.popularmovies.model;
 
+import android.database.Cursor;
 import android.os.Parcel;
 import android.os.Parcelable;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.Serializable;
 
 /**
  * Created by vlado on 2/7/17.
@@ -52,6 +55,21 @@ public class Movie implements Parcelable {
         vote_count = json.getInt("vote_count");
         video = json.getBoolean("video");
         vote_average = json.getDouble("vote_average");
+    }
+
+    public Movie(Cursor cursor) {
+        poster_path = cursor.getString(cursor.getColumnIndex("poster_path"));
+        adult = cursor.getInt(cursor.getColumnIndex("adult"))>0;
+        overview = cursor.getString(cursor.getColumnIndex("overview"));
+        release_date = cursor.getString(cursor.getColumnIndex("release_date"));
+        id = cursor.getInt(cursor.getColumnIndex("id"));
+        original_title = cursor.getString(cursor.getColumnIndex("original_title"));
+        title = cursor.getString(cursor.getColumnIndex("title"));
+        backdrop_path = cursor.getString(cursor.getColumnIndex("backdrop_path"));
+        popularity = cursor.getDouble(cursor.getColumnIndex("popularity"));
+        vote_count = cursor.getInt(cursor.getColumnIndex("vote_count"));
+        video = cursor.getInt(cursor.getColumnIndex("video"))>0;
+        vote_average = cursor.getDouble(cursor.getColumnIndex("vote_average"));
     }
 
     @Override
@@ -115,5 +133,37 @@ public class Movie implements Parcelable {
 
     public String getOverview() {
         return overview;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getPosterPath() {
+        return poster_path;
+    }
+
+    public boolean getAdult() {
+        return adult;
+    }
+
+    public String getBackDropPath() {
+        return backdrop_path;
+    }
+
+    public double getPopularity() {
+        return popularity;
+    }
+
+    public int getVoteCount() {
+        return vote_count;
+    }
+
+    public boolean getVideo() {
+        return video;
+    }
+
+    public double getVoteAverage_double() {
+        return vote_average;
     }
 }

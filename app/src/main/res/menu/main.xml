@@ -4,8 +4,11 @@
 
     <item android:title="@string/top_rated"
         android:id="@+id/top_rated"
-        android:showAsAction="ifRoom" />
+        app:showAsAction="ifRoom" />
     <item android:title="@string/popular"
         android:id="@+id/popular"
-        android:showAsAction="ifRoom" />
+        app:showAsAction="ifRoom" />
+    <item android:title="@string/favourites"
+        android:id="@+id/favourite"
+        app:showAsAction="ifRoom" />
 </menu>
